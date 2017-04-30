@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/food/resources/views/food_category.blade.php</file>
+            <file>file:/C:/xampp/htdocs/food/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/food/public/css/my.css</file>
+            <file>file:/C:/xampp/htdocs/food/app/Http/Controllers/FoodController.php</file>
+            <file>file:/C:/xampp/htdocs/food/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/food/resources/views/cocktail_category.blade.php</file>
+            <file>file:/C:/xampp/htdocs/food/app/Http/Controllers/CocktailController.php</file>
+            <file>file:/C:/xampp/htdocs/food/resources/views/food_corrent.blade.php</file>
+            <file>file:/C:/xampp/htdocs/food/resources/views/layouts/app.blade.php</file>
+            <file>file:/C:/xampp/htdocs/food/app/Http/Controllers/Categories.php</file>
+        </group>
+    </open-files>
+</project-private>
