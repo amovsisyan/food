@@ -1,9 +1,21 @@
 $( document ).ready(function() {
     /*      Carousel location changing, cause there is bootstrap problem        */
-    $(document).on('click', '.carousel_more', function(event) {
-        var link = $('.item.active .carousel_more').attr('data-href');
+    $(document).on('click', '.carousel-button', function(event) {
+        var link = $('.my_carousel-slider .carousel-item.active h2').attr('data-href');
         location.replace(link);
     });
+
+    /*Materialize CSS Carousel*/
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+    /*Side Button Materialize CSS*/
+    $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 300
+            edge: 'right', // Choose the horizontal origin
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        }
+    );
 
     $(".most-populars").on({
         mouseenter: function () {

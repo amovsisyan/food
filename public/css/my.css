@@ -15,132 +15,81 @@ body{
 .all{
     height:100%;
 }
-
-li .fa-home{
-	font: normal normal normal 20px/1 FontAwesome;
-	color:#5e5e5e;
-}
-
-.nav_items{
-	font-size:16px;
+header .menu-top{
+	/*for some shadow*/
+	margin-bottom: 1px;
 }
 h3{
 	font-size: 24px;
 	font-weight: 700;
 }
 
-.menu-top .navbar {
+/*NAV BAR*/
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+	height:0;
+}
+.nav-extended .fa-bars{
+	font: normal normal normal 20px/1 FontAwesome;
+	color:#5e5e5e;
+}
+.menu-top .nav-extended {
 	margin: 0;
-	background: #FEF2F4;
-	padding: 15px 0px;
+	/*background: #FEF2F4;*/
+	padding: 5px 25px;
 	text-transform: uppercase;
 }
-
-.navbar-default .navbar-nav{
-    float:right;
+.nav-extended .nav-wrapper .brand-logo{
+	text-decoration: none;
 }
-.navbar-default .navbar-nav > li > a{
-	color: #5e5e5e;
-	padding-top: 5px;
-	padding-bottom: 5px;
+.nav-extended .nav-wrapper ul > li > a{
 	transition: background 0.3s;
-        
 }
-.navbar-default .navbar-nav > li > a:hover{
+.nav-extended .nav-wrapper ul > li > a:hover{
+	color: #fff;
 	text-decoration: underline;
 }
-.btn-red{
-	background: #d51e08;
-	color: #fff;
-	border-radius:3px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
-.navbar-default .navbar-nav > li > a .glyphicon{
-	margin-right: 10px;
-	font-size: 17px;
+/*Carousel Welcome*/
+.my_carousel-slider{
+	height: 600px !important;
 }
-.navbar-default .navbar-nav > li > a .flag{
-	margin-right: 7px;
-	position: relative;
-	top:-1px;
-}
-.menu-top .container,
-.menu-top .navbar-collapse{
-	padding-left: 0;
-}
-.bgslide{
+.my_carousel-slider .carousel-item>img {
+	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center;
+	z-index: -1;
+	min-height: 100%;
 }
-/*.bgslide1{*/
-	/*background-image: url('/img/carousel/01_meet.jpg');*/
-/*}*/
-/*.bgslide2{*/
-	/*background-image: url('/img/carousel/02_meet.jpg');*/
-/*}*/
-/*.bgslide3{*/
-	/*background-image: url('/img/carousel/03_meet.jpg');*/
-/*}*/
-.carousel-menu .item{
-	height: 700px;
-}
-.carousel.fade{
-	opacity: 1;
-}
-.carousel.fade .item{
-	display: block;
+.my_carousel-inner-text{
 	position: absolute;
-	top: 0;
-	left:0;
-	opacity: 0;
-	transition: opacity 2s;
-	width: 100%;
+	top: 40%;
+	left:50%;
+	transform: translate(-50%,-50%);;
 }
-.carousel.fade .item.active{
-	opacity: 1;
-	position: relative;
+.carousel.my_carousel-slider .carousel-item h2 {
+	font-weight:bold;
+	font-size:64px;
+	text-shadow: -1px 0 #363636, 0 1px #363636, 1px 0 #363636, 0 -1px #363636;
 }
-.carousel-menu .carousel-caption{
-	left: -300px;
-	top: 150px;
+.carousel.my_carousel-slider .carousel-item p {
+	font-weight:bold;
+	font-size:32px;
+	text-shadow: -1px 0 #363636, 0 1px #363636, 1px 0 #363636, 0 -1px #363636;
 }
-.carousel-menu .carousel-caption h1{
-	font-weight: bold;
-	font-size: 48px;
-}
-.carousel-menu .carousel-caption h3{
-	font-size: 30px;
-	margin-bottom: 40px;
-}
-.carousel-menu .carousel-caption .btn-red{
-	background: #d51e08;
-	padding: 15px 30px;
-	border-radius: 3px;
-	color: #fff;
-	text-decoration: none;
-	font-size: 24px;
-	cursor: pointer;
+.carousel.my_carousel-slider .indicators .indicator-item{
+	height: 18px;
+	width: 18px;
 }
 
-.carousel-indicators li,
-.carousel-indicators .active{
-	width: 15px;
-	height: 15px;
-	border: 1px solid #ca0000;
-	border-radius: 100%;
-}
 
-.carousel-indicators .active{
-	margin:1px;
+/*Slogan*/
+.main-slogan{
+	text-align: center;
 }
-
+.main-slogan h2{
+	font-size:36px;
+}
 .main-menu .navbar-inverse{
 	background-color: transparent;
 	border: none;
@@ -178,18 +127,15 @@ h3{
 	background-color: #5e5e5e;
 	border-radius: 3px;
 }
-.main-slogan{
-    text-align: center;
-}
 
 /*       populars     */
 .populars,
 .categories{
-	padding:25px 0px 25px 0px;
+	padding:25px 0 25px 0;
 }
 
 .category{
-	padding:15px 0px 35px 0px;
+	padding:15px 0;
 	border-bottom: 3px solid #FF291E;
 	border-radius: 15px;
 	background-color: #ffd1d6;
@@ -197,10 +143,14 @@ h3{
 
 .populars .header_name,
 .categories .header_name{
-	padding-bottom: 25px;
+	margin:10px 0 25px 0;
 	text-align: center;
+	font-size:36px;
 }
-
+.populars.welcome-food .row,
+.populars.welcome-drink .row{
+	margin:0;
+}
 .header_name a{
 	color: #5e5e5e;
 	text-decoration: none;
@@ -351,21 +301,34 @@ h3{
 }
 
 /* footer  */
-
-footer{
-	margin-top: 50px;
-	/*position: absolute;*/
-	bottom: 0;
-	left: 0;
-	width: 100%;
-    display: block;
-	background: #feecf1;
+footer .my_box{
+	display: inline-block;
+	padding:10px;
+	background: #558b2f;
+	border-radius: 50%;
+	margin-right: 10px;
 }
-
-footer  .footer_backgr{
-    width: 100%;
+footer .my_box:hover i{
+	text-decoration: none;
+	color: #ee6e73;
 }
-
+footer .my_box i{
+	font-size:24px;
+	color: #fff;
+}
+footer .nav-wrapper ul li{
+	display: inline-block;
+	margin:0 30px;
+}
+footer .nav-wrapper ul > li > a{
+	color: #fff;
+	font-size:16px;
+	text-transform: uppercase;
+	transition: background 0.3s;
+}
+footer .nav-wrapper ul > li > a:hover{
+	text-decoration: underline;
+}
 
 /*for left navbar*/
 .glyphicon { margin-right:10px; }
@@ -376,18 +339,10 @@ footer  .footer_backgr{
 
 
 @media only screen and (max-width : 1800px){
-	.carousel-inner>.item>a>img, .carousel-inner>.item>img{
-		min-width: 1800px;
-	}
+
 }
 
 @media only screen and (max-width : 1200px){
-	.menu-top .navbar-nav{
-		float:none !important;
-	}
-	.sidebar .carousel, .sidebar .about{
-		margin-right: 10px;
-	}
 	.menu-icons img{
 		display: block;
 		margin-bottom: 5px;
@@ -396,61 +351,13 @@ footer  .footer_backgr{
 
 
 @media only screen and (max-width : 992px){
-	.carousel-menu .carousel-caption{
-		left: 0px;
-		top: 150px;
-	}
-	.carousel-menu .carousel-caption h1{
-		font-size: 40px;
-	}
-	.carousel-menu .carousel-caption h3{
-		font-size: 24px;
-		margin-bottom: 40px;
-	}
-	.carousel-menu .carousel-caption .btn-red{
-		background: #d51e08;
-		padding: 12px 24px;
-		border-radius: 3px;
-		color: #fff;
-		text-decoration: none;
-		font-size: 20px;
-	}
-	
-	
-
 
 }
 
 @media only screen and (max-width : 768px){
-	.navbar-default .navbar-nav > li > a:hover{
-		background: #eee;
-	}
-	.menu-top .container,
-	.menu-top .navbar-collapse{
+	.menu-top .container{
 		padding-left: 15px;
 	}
-
-	.carousel-menu .carousel-caption{
-		left: 20px;
-		top: 150px;
-	}
-	.carousel-menu .carousel-caption h1{
-		font-size: 32px;
-	}
-	.carousel-menu .carousel-caption h3{
-		font-size: 18px;
-		margin-bottom: 40px;
-	}
-	.carousel-menu .carousel-caption .btn-red{
-		background: #d51e08;
-		padding: 8px 16px;
-		border-radius: 3px;
-		color: #fff;
-		text-decoration: none;
-		font-size: 16px;
-	}
-	
-
 
 }
 

@@ -3,80 +3,26 @@
 @section('content')
 
     <section class="carousel-menu">
-		<div id="carousel" class="carousel fade" data-ride="carousel">
-				<!-- Indicators -->
-				<div class='carousel-indicators-wrap'>
-					<ol class="carousel-indicators">
-						<li data-target="#carousel" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel" data-slide-to="1"></li>
-						<li data-target="#carousel" data-slide-to="2"></li>
-					</ol>
-				</div><!-- Indicators -->
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-                    @foreach($slides as $slide)
-                        @if($slide->status == 0)
-                        <div class="item active">
-                                @else
-                            <div class="item">
-                                @endif
-                                <img src="/img/carousel/{{$slide->avatar}}" alt="...">
-                                <div class="bgslide bgslide1"></div>
-                                <div class="carousel-caption">
-                                    <h1>{{ $slide->header_inf }}</h1>
-                                    <h3>{{ $slide->body_inf }}</h3>
-                                    <span data-href="{{url( $slide->more_inf)}}" class="btn-red carousel_more">see more <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        @endforeach
-
-					{{--<div class="item active">--}}
-						{{--<!--<img src="img/slider.jpg" alt="...">-->--}}
-						{{--<div class="bgslide bgslide1"></div>--}}
-						{{--<div class="carousel-caption">--}}
-							{{--<h1>Women's apparel 1</h1>--}}
-							{{--<h3>T-shirt, Dress for 1</h3>--}}
-							{{--<a href="#" class="btn-red">Shopping Cart 1</a>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-					{{--<div class="item">--}}
-						{{--<!--<img src="img/slider.jpg" alt="...">-->--}}
-						{{--<div class="bgslide bgslide2"></div>--}}
-						{{--<div class="carousel-caption">--}}
-							{{--<h1>Women's apparel 2</h1>--}}
-							{{--<h3>T-shirt, Dress for 2</h3>--}}
-							{{--<a href="#" class="btn-red">Shopping Cart 2</a>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-					{{--<div class="item">--}}
-						{{--<!--<img src="img/slider.jpg" alt="...">-->--}}
-						{{--<div class="bgslide bgslide3"></div>--}}
-						{{--<div class="carousel-caption">--}}
-							{{--<h1>Women's apparel 3</h1>--}}
-							{{--<h3>T-shirt, Dress for 3</h3>--}}
-							{{--<a href="#" class="btn-red">Shopping Cart 3</a>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-				    </div>
-
-				<!-- Controls -->
-<!--				<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>-->
-			    </div>
-		</div>
+        <div class="carousel carousel-slider center my_carousel-slider" data-indicators="true">
+            <div class="carousel-fixed-item center">
+                <a class="btn waves-effect white grey-text darken-text-2 carousel-button">See More</a>
+            </div>
+            @foreach($slides as $slide)
+                <div class="carousel-item white-text" href="">
+                    <img src="/img/carousel/{{$slide->avatar}}" alt="...">
+                    <div class="my_carousel-inner-text">
+                        <h2 data-href="{{url( $slide->more_inf)}}" >{{ $slide->header_inf }}</h2>
+                        <p>{{ $slide->body_inf }}</p>
+                    </div>
+                 </div>
+            @endforeach
+        </div>
     </section>
 	<section class="main-slogan">
 		<div class="container-fluid">
-			<h1>
+			<h2>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit
-			</h1>
+			</h2>
 		</div>
 	</section>
     <section class="populars welcome-new">

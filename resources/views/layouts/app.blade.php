@@ -12,9 +12,11 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/my.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/css/materialize.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/css/my.css" rel="stylesheet">
     <script src="/js/app.js"></script>
+    <script src="/js/materialize.min.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -25,50 +27,61 @@
 </head>
 <body>
 <header>
-		<div class='menu-top'>
-			<nav class="navbar navbar-default">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-                                                    <li><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                                                    @foreach($navbars as $navbar)
-                                                        <li class="nav_items"><a href="{{ url('/'.$navbar->alias) }}">{{$navbar->name}}</a></li>
-                                                    @endforeach
-							
-<!--							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="flag"><img src="img/flag.jpg" alt="english flag"></span>ENGLISH</span><span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">RUSSIAN</a></li>
-									<li><a href="#">ARMENIAN</a></li>
-								</ul>
-							</li>-->
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
+	<div class='menu-top'>
+			<nav class="nav-extended">
+				<div class="nav-wrapper">
+					<a href="{{ url('/') }}" class="brand-logo">Logo</a>
+					<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="fa fa-bars" aria-hidden="true"></i></a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						@foreach($navbars as $navbar)
+							<li class="nav_items"><a href="{{ url('/'.$navbar->alias) }}">{{$navbar->name}}</a></li>
+						@endforeach
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						@foreach($navbars as $navbar)
+							<li class="nav_items"><a href="{{ url('/'.$navbar->alias) }}">{{$navbar->name}}</a></li>
+						@endforeach
+					</ul>
+				</div>
 			</nav>
-		</div><!-- /.top-menu -->
-	</header>
-
-
-
+	</div><!-- /.top-menu -->
+</header>
     @yield('content')
-
-<footer>
-	<img src="/img/footer-2.png" class="footer_backgr" alt="">
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 center">
+				<div class="my_box">
+					<a href="">
+						<i class="fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="my_box">
+					<a href="">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center">
+				<div class="nav-wrapper">
+					<ul id="nav-mobile" class="center">
+						@foreach($navbars as $navbar)
+							<li class="nav_items"><a href="{{ url('/'.$navbar->alias) }}">{{$navbar->name}}</a></li>
+						@endforeach
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2017 Copyright NoCoffee Solutions
+			<a class="grey-text text-lighten-4 right" href="#!">Page Owner A. Movsisyan</a>
+		</div>
+	</div>
 </footer>
-
 </body>
 <script src="/js/my.js"></script>
 </html>

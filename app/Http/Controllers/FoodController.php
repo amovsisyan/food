@@ -22,7 +22,7 @@ class FoodController extends HomeController
                   'foods' => $foods,
                    'path_alias'=>$path_alias,
                    'navbar_items'=>$left_nav);
-        return view('food_current_category',$data);
+        return view('food-section/food_current_category',$data);
     }
     
     public function current($type,$alias){
@@ -39,6 +39,6 @@ class FoodController extends HomeController
             'obj' => $obj,
             'path_alias'=>$path_alias,
             'navbar_items'=>$left_nav);
-        return view('food_current',$data);
+        return view('food-section/food_current',$data);
     }
 }

@@ -22,7 +22,7 @@ class CocktailController extends HomeController
             'cocktails' => $cocktails,
             'path_alias'=>$path_alias,
             'navbar_items'=>$left_nav);
-        return view('cocktail_current_category',$data);
+        return view('cocktail-section/cocktail_current_category',$data);
     }
 
     public function current($type,$alias){
@@ -39,6 +39,6 @@ class CocktailController extends HomeController
             'obj' => $obj,
             'path_alias'=>$path_alias,
             'navbar_items'=>$left_nav);
-        return view('cocktail_current',$data);
+        return view('cocktail-section/cocktail_current',$data);
     }
 }
