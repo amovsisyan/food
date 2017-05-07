@@ -7,7 +7,8 @@ use App\Cocktail;
 use App\Category;
 class CocktailController extends HomeController
 {
-    public function all($type){
+    public function all($type)
+    {
         $left_nav = parent::leftnavbar_cockt_cur($type);
         $type_id_obj = Category::select('id', 'alias')->where('alias',$type)->first();
         $path_alias = $type_id_obj->alias;
@@ -25,7 +26,8 @@ class CocktailController extends HomeController
         return view('cocktail-section/cocktail_current_category',$data);
     }
 
-    public function current($type,$alias){
+    public function current($type,$alias)
+    {
         $left_nav = parent::leftnavbar_cockt_cur($type);
         $type_id_obj = Category::select('id', 'alias')->where('alias',$type)->first();
         $path_alias = $type_id_obj->alias;

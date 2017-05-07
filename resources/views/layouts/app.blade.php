@@ -11,7 +11,7 @@
     <title>Food.am</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    {{--<link href="/css/app.css" rel="stylesheet">--}}
 	<link href="/css/materialize.min.css" rel="stylesheet">
 	<link href="/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/css/my.css" rel="stylesheet">

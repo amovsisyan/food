@@ -3,17 +3,19 @@
     <section class="populars">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col s2 my_left-navbar">
                     @foreach($navbar_items as $key => $items)
                         @foreach($items as $key_i => $item)
                             <ul>
                                 @if($key_i != "params" && $key_i != $key_alias)
-                                    <a href="/{{ $key_i }}"> {{$item}}</a>
+                                    <span class="left-nav-category">
+                                        <a href="/{{ $key_i }}"> {{$item}}</a>
+                                    </span>
                                 @elseif($key_i != "params" && $key_i == $key_alias)
-                                    <span>{{$item}}</span>
+                                    <span class="left-nav-category">{{$item}}</span>
                                 @else
                                     @foreach($item as $k => $v)
-                                        <li>
+                                        <li class="left-nav-category-items">
                                             <a href="/{{ $key }}/{{ $k }}">{{$v}}</a>
                                         </li>
                                     @endforeach
@@ -22,9 +24,9 @@
                         @endforeach
                     @endforeach
                 </div>
-                <div class="col-md-10">
+                <div class="col s10">
                     @foreach($data as $d)
-                        <div class="col-xs-4">
+                        <div class="col s4">
                             <div class="most-populars">
                                 <img src="/img/all/{{$key_alias}}/{{$d->avatar}}" alt=""/>
                                 <div class="text">

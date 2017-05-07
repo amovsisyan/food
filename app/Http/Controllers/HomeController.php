@@ -17,7 +17,8 @@ class HomeController extends Controller
         $this->navbars = Navbar::all();     
     }
 
-    public function index(){
+    public function index()
+    {
         $slides = Mslide::all();
 
         $mostpop_s = DB::table('most_pop')->
@@ -62,7 +63,8 @@ class HomeController extends Controller
         );
     }
 
-    public function leftnavbar(){
+    public function leftnavbar()
+    {
         $data = Category::select( 'categories.name as cat_name', 'navbars.name as nav_name',
             'categories.alias as cat_alias','navbars.alias as nav_alias' )
             ->leftJoin('navbars', function ($join) {
@@ -74,18 +76,15 @@ class HomeController extends Controller
             $arr_data [$d->nav_alias][$d->nav_alias] = $d->nav_name;
             $arr_data [$d->nav_alias]['params'][$d->cat_alias] = $d ->cat_name;
         }
-
 //        dd($arr_data);
-
         return $arr_data;
-
         //SELECT categories.name as cat_name, navbars.name as nav_name
         // FROM `categories`
         // left JOIN navbars on navbars.id = categories.main_category_id
     }
 
-    public function leftnavbar_food_cur($type){
-
+    public function leftnavbar_food_cur($type)
+    {
         $data = Category::select('categories.id as cat_id','categories.name as cat_name', 'navbars.name as nav_name','foods.name as food_name',
             'categories.alias as cat_alias','navbars.alias as nav_alias','foods.alias as f_alias')
             ->leftJoin('navbars', function ($join) {
@@ -96,7 +95,6 @@ class HomeController extends Controller
             })->get();
 //        dd($data);
         $arr_data = [];
-
 
 //        SELECT categories.id as cat_id, categories.name as cat_name, navbars.name as nav_name,foods.name as food_name
 //         FROM `categories`
@@ -112,17 +110,14 @@ class HomeController extends Controller
                 $arr_data [$d->nav_alias][$d ->nav_alias] = $d ->nav_name;
                 $arr_data [$d->nav_alias]['params'] [$d ->cat_alias][$d ->cat_alias] = $d ->cat_name;
             }
-
         }
-
 //        dd($arr_data);
-
         return $arr_data;
     }
 
 
-    public function leftnavbar_cockt_cur($type){
-
+    public function leftnavbar_cockt_cur($type)
+    {
         $data = Category::select('categories.id as cat_id','categories.name as cat_name', 'navbars.name as nav_name','cocktails.name as cockt_name',
             'categories.alias as cat_alias','navbars.alias as nav_alias','cocktails.alias as c_alias')
             ->leftJoin('navbars', function ($join) {
@@ -149,10 +144,7 @@ class HomeController extends Controller
                 $arr_data [$d->nav_alias][$d ->nav_alias] = $d ->nav_name;
                 $arr_data [$d->nav_alias]['params'] [$d ->cat_alias][$d ->cat_alias] = $d ->cat_name;
             }
-
         }
-
-
         return $arr_data;
     }
 }

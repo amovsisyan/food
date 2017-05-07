@@ -4,23 +4,25 @@
 <section class="populars">
 		<div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col s2 my_left-navbar">
                     @foreach($navbar_items as $key => $items)
                         @foreach($items as $key_i => $item)
                             <ul>
                                 @if($key_i != "params")
-                                    <a href="/{{ $key }}"> {{$item}}</a>
+                                    <span class="left-nav-category">
+                                        <a href="/{{ $key }}"> {{$item}}</a>
+                                    </span>
                                 @else
                                     @foreach($item as $k => $v)
                                         @foreach($v as $k_new => $v_new)
                                             @if($k_new != "params")
-                                                <li>
+                                                <li class="left-nav-category-items">
                                                     <a href="/{{$key}}/{{ $k_new }}"> {{$v_new}}</a>
                                                 </li>
                                             @else
                                                 <ul>
                                                     @foreach($v_new as $a => $b)
-                                                        <li>
+                                                        <li class="left-nav-category-items-i">
                                                             <a href="/{{ $key }}/{{ $k }}/{{ $a }}">{{$b}}</a>
                                                         </li>
                                                     @endforeach
@@ -34,14 +36,14 @@
                     @endforeach
                 </div>
 
-                <div class="col-md-10 current_cat">
+                <div class="col s10 current_cat">
                     @foreach($foods as $food)
-                        <div class="col-md-12">
+                        <div class="col m12">
                             <div class="cur-populars">
-                                <div class="col-md-4 desc_img">
+                                <div class="col m4 desc_img">
                                         <img src="/img/all/food/{{$path_alias}}/{{$food->avatar}}" alt=""/>
                                 </div>
-                                <div class="col-md-8 descript">
+                                <div class="col m8 descript">
                                     <div class="top_descript">
                                         <h2>
                                             <a href="{{ url('/food/'.$path_alias."/".$food->alias) }}">

@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
-
 @section('content')
     <section class="populars">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col m2">
                     @foreach($navbar_items as $key => $items)
                         @foreach($items as $key_i => $item)
                             <ul>
@@ -41,13 +40,13 @@
                     @endforeach
                 </div>
 
-                <div class="col-md-10 current_cat">
-                    <div class="col-md-12">
+                <div class="col m10 current_cat">
+                    <div class="col m12">
                         <div class="current">
-                            <div class="col-md-6 cur_desc_img">
+                            <div class="col m6 cur_desc_img">
                                 <img src="/img/all/cocktail/{{$path_alias}}/{{$obj->avatar}}" alt=""/>
                             </div>
-                            <div class="col-md-6 cur_descipt">
+                            <div class="col m6 cur_descipt">
                                 <div class="top_descript">
                                     <h2>
                                         {{$obj->name}}
@@ -66,7 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col m12">
                             <div class="cur_bot_descript">
                                 {{$obj->all_text}}</br>
                             </div>

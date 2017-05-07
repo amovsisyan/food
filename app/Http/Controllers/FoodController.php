@@ -7,7 +7,8 @@ use App\Food;
 use App\Category;
 class FoodController extends HomeController
 {
-    public function all($type){
+    public function all($type)
+    {
         $left_nav = parent::leftnavbar_food_cur($type);
         $type_id_obj = Category::select('id','alias')->where('alias',$type)->first();
         $path_alias = $type_id_obj->alias;
@@ -25,7 +26,8 @@ class FoodController extends HomeController
         return view('food-section/food_current_category',$data);
     }
     
-    public function current($type,$alias){
+    public function current($type,$alias)
+    {
         $left_nav = parent::leftnavbar_food_cur($type);
         $type_id_obj = Category::select('id', 'alias')->where('alias',$type)->first();
         $path_alias = $type_id_obj->alias;

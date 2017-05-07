@@ -8,7 +8,8 @@ use App\Navbar;
 use App\Category;
 class CategoriesController extends HomeController
 {
-    public function category(){
+    public function category()
+    {
        $left_nav = parent::leftnavbar();
        $alias = Route::getCurrentRoute()->getPath();
        $category_id = Navbar::select('id')->where('alias',$alias)->first();
