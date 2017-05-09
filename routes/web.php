@@ -16,8 +16,8 @@ Route::get('/', ['uses'=>'HomeController@index','as'=>'home']);
 Route::get('/food', ['uses'=>'CategoriesController@category','as'=>'food_categories']);
 Route::get('/cocktail', ['uses'=>'CategoriesController@category','as'=>'cocktail_categories']);
 
-Route::get('/food/{type}', ['uses'=>'FoodController@all','as'=>'food_current_category']);
-Route::get('/cocktail/{type}', ['uses'=>'CocktailController@all','as'=>'cocktail_current_category']);
+Route::get('/food/{type}', ['uses'=>'CategoriesController@current_category','as'=>'current_category_food']);
+Route::get('/cocktail/{type}', ['uses'=>'CategoriesController@current_category','as'=>'current_category_cocktail']);
 
 Route::get('/food/{type}/{alias}', ['uses'=>'FoodController@current','as'=>'food_current']);
 Route::get('/cocktail/{type}/{alias}', ['uses'=>'CocktailController@current','as'=>'cocktail_current']);

@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-
 @section('content')
     <section class="populars">
         <div class="container-fluid">
@@ -38,26 +36,34 @@
                 </div>
 
                 <div class="col s10 current_cat">
-                    @foreach($cocktails as $cocktail)
-                        <div class="col m12">
+                    @foreach($data as $d)
+                        <div class="col s12">
                             <div class="cur-populars">
-                                <div class="col m4 desc_img">
-                                    <img src="/img/all/cocktail/{{$path_alias}}/{{$cocktail->avatar}}" alt=""/>
+                                <div class="col s4 desc_img">
+                                    <img src="/img/all/{{Request::segment(1)}}/{{Request::segment(2)}}/{{$d->avatar}}" alt=""/>
                                 </div>
-                                <div class="col m8 descipt">
-                                    <div class="top_descript">
-                                        <h2>
-                                            <a href="{{ url('/cocktail/'.$path_alias."/".$cocktail->alias) }}">
-                                                {{$cocktail->name}}
-                                            </a>
-                                        </h2>
-                                        <div class="time_recept">
-                                            <p>Receipt by: {{$cocktail->recept_by}}</p>
-                                            <p>Cook time: {{$cocktail->cook_time}}</p>
+                                <div class="col s8 descript">
+                                    <div class="row">
+                                        <div class="col m6 s12 top_descript">
+                                            <h2>
+                                                <a href="{{ url('/'.Request::segment(1).'/'.Request::segment(2).'/'.$d->alias) }}">
+                                                    {{$d->name}}
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div class="col m6 s12 time_recept">
+                                            <p class="receipt_by">Receipt by:
+                                                <a href="">
+                                                    #{{$d->recept_by}}
+                                                </a>
+                                            </p>
+                                            <p>Cook time: {{$d->cook_time}}</p>
                                         </div>
                                     </div>
-                                    <div class="bot_descript">
-                                        {{$cocktail->all_text}}</br>
+                                    <div class="row">
+                                        <div class="col s12 bot_descript">
+                                            {{$d->all_text}}...</br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

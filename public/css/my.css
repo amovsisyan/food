@@ -17,6 +17,9 @@ header .menu-top{
 	/*for some shadow*/
 	margin-bottom: 1px;
 }
+h2{
+	margin-top:0;
+}
 h3{
 	font-size: 2vw;
 	font-weight: 700;
@@ -190,9 +193,6 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 	display: inline-block;
 	float: right;
 }
-.current_cat .bot_descript{
-	padding-top: 2.5vw;
-}
 .most-populars img{
 	position: absolute;
 	z-index:1;
@@ -359,6 +359,31 @@ footer .nav-wrapper ul > li > a:hover{
 	font-size:1.1vw;
 }
 
+/*Current Category*/
+.current_cat .top_descript h2{
+	font-size:2.5vw;
+	text-transform: capitalize;
+}
+.current_cat .top_descript h2 a{
+	color: #5e5e5e !important;
+}
+.current_cat .top_descript h2 a:hover{
+	text-decoration: underline;
+}
+.current_cat .bot_descript{
+	padding-top: 5vw;
+}
+.current_cat .time_recept .receipt_by a{
+	color: #FF291E;
+}
+.current_cat .time_recept .receipt_by a:hover{
+	text-decoration: underline;
+}
+.current_cat .descript .row{
+	margin:0 !important;
+}
+
+
 @media only screen and (max-width : 1800px){
 
 }
@@ -414,6 +439,12 @@ footer .nav-wrapper ul > li > a:hover{
 	}
 	.my_left-navbar li a{
 		font-size:1.7vw;
+	}
+	.current_cat .top_descript{
+		margin-bottom:2vw;
+	}
+	.current_cat .bot_descript{
+		padding-top: 3vw;
 	}
 }
 
