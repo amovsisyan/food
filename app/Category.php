@@ -13,4 +13,8 @@ class Category extends Model
     public function foods(){
         return $this->hasMany('App\Food');
     }
+
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
 }

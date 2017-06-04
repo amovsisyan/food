@@ -13,14 +13,11 @@
 
 Route::get('/', ['uses'=>'HomeController@index','as'=>'home']);
 
-Route::get('/food', ['uses'=>'CategoriesController@category','as'=>'food_categories']);
-Route::get('/cocktail', ['uses'=>'CategoriesController@category','as'=>'cocktail_categories']);
+Route::get('/{category}', ['uses'=>'CategoriesController@category','as'=>'category']);
 
-Route::get('/food/{type}', ['uses'=>'CategoriesController@current_category','as'=>'current_category_food']);
-Route::get('/cocktail/{type}', ['uses'=>'CategoriesController@current_category','as'=>'current_category_cocktail']);
+Route::get('/{category}/{type}', ['uses'=>'CategoriesController@current_category','as'=>'current_category']);
 
-Route::get('/food/{type}/{alias}', ['uses'=>'FoodController@current','as'=>'food_current']);
-Route::get('/cocktail/{type}/{alias}', ['uses'=>'CocktailController@current','as'=>'cocktail_current']);
+Route::get('/{category}/{type}/{alias}', ['uses'=>'ProductController@products','as'=>'food_current']);
 
 
 //https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/

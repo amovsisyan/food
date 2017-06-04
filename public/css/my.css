@@ -154,9 +154,9 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 	text-align: center;
 	font-size:3vw;
 }
-.populars.welcome-food .row,
-.populars.welcome-drink .row{
+.populars.welcome-product .row{
 	margin:0;
+	text-transform: capitalize;
 }
 .header_name a{
 	color: #5e5e5e;

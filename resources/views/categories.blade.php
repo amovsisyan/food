@@ -7,11 +7,11 @@
                     @foreach($navbar_items as $key => $items)
                         @foreach($items as $key_i => $item)
                             <ul>
-                                @if($key_i != "params" && $key_i != $key_alias)
+                                @if($key_i != "params" && $key_i != Request::segment(2))
                                     <span class="left-nav-category">
                                         <a href="/{{ $key_i }}"> {{$item}}</a>
                                     </span>
-                                @elseif($key_i != "params" && $key_i == $key_alias)
+                                @elseif($key_i != "params" && $key_i == Request::segment(2))
                                     <span class="left-nav-category">{{$item}}</span>
                                 @else
                                     @foreach($item as $k => $v)
@@ -28,9 +28,9 @@
                     @foreach($data as $d)
                         <div class="col s4">
                             <div class="most-populars">
-                                <img src="/img/all/{{$key_alias}}/{{$d->avatar}}" alt=""/>
+                                <img src="/img/products/{{Request::segment(1)}}/{{$d->avatar}}" alt=""/>
                                 <div class="text">
-                                    <a href="{{ url('/'.$key_alias.'/'.$d->alias) }}">
+                                    <a href="{{ url('/'. Request::segment(1) .'/'.$d->alias) }}">
                                         {{$d->name}}
                                     </a>
                                 </div>

@@ -9,7 +9,7 @@
                     <div class="col m12">
                         <div class="current">
                             <div class="col m6 cur_desc_img">
-                                <img src="/img/all/cocktail/{{$path_alias}}/{{$obj->avatar}}" alt=""/>
+                                <img src="/img/products/{{Request::segment(1)}}/{{Request::segment(2)}}/{{$obj->avatar}}" alt=""/>
                             </div>
                             <div class="col m6 cur_descipt">
                                 <div class="top_descript">

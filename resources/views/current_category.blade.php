@@ -40,7 +40,7 @@
                         <div class="col s12">
                             <div class="cur-populars">
                                 <div class="col s4 desc_img">
-                                    <img src="/img/all/{{Request::segment(1)}}/{{Request::segment(2)}}/{{$d->avatar}}" alt=""/>
+                                    <img src="/img/products/{{Request::segment(1)}}/{{Request::segment(2)}}/{{$d->avatar}}" alt=""/>
                                 </div>
                                 <div class="col s8 descript">
                                     <div class="row">

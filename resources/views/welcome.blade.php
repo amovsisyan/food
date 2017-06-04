@@ -25,83 +25,62 @@
 		</div>
 	</section>
     <section class="my_welcome-page">
-        <section class="populars welcome-new">
-            <div class="category">
-                <div class="container-fluid">
-                    <div class="row">
-                        <h1 class="header_name">Լավագույնները</h1>
-                        @foreach($mostpop_s as $m)
-                            <div class="col s4">
-                                <div class="most-populars">
-                                    <img src="/img/all/{{$m->nav_alias}}/{{$m->cat_alias}}/{{$m->avatar}}" alt=""/>
-                                    <div class="text">
-                                        <a href="{{ url('/'.$m->nav_alias.'/'.$m->cat_alias."/".$m->alias) }}">
-                                            {{$m->name}}
-                                        </a>
+        @foreach($mostpop_s as $key => $populars)
+            @if($key === -1)
+                <section class="populars welcome-new">
+                    <div class="category">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <h1 class="header_name">Լավագույնները</h1>
+                                @foreach($populars['products'] as $p)
+                                    <div class="col s4">
+                                        <div class="most-populars">
+                                            <img src="/img/products/{{$p->nav_alias}}/{{$p->cat_alias}}/{{$p->avatar}}" alt=""/>
+                                            <div class="text">
+                                                <a href="{{ url('/'.$p->nav_alias.'/'.$p->cat_alias."/".$p->alias) }}">
+                                                    {{$p->name}}
+                                                </a>
+                                            </div>
+                                            <div class="animation_msp_1"></div>
+                                            <div class="animation_msp_2"></div>
+                                        </div>
                                     </div>
-                                    <div class="animation_msp_1"></div>
-                                    <div class="animation_msp_2"></div>
-                                </div>
-                            </div>
-                            @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="populars welcome-food">
-            <div class="category">
-                <div class="container-fluid">
-                <div class="row">
-                    <h1 class="header_name">
-                        <a href="{{ url('/food') }}">Սնունդ</a>
-                    </h1>
-                    @foreach($most_foods as $f)
-                        <div class="col s4">
-                            <div class="most-populars">
-                                <img src="/img/all/{{$f->nav_alias}}/{{$f->cat_alias}}/{{$f->avatar}}" alt=""/>
-                                <div class="text">
-                                    <a href="{{ url('/'.$f->nav_alias.'/'.$f->cat_alias."/".$f->alias) }}">
-                                        {{$f->name}}
-                                    </a>
-                                </div>
-                                <div class="animation_msp_1"></div>
-                                <div class="animation_msp_2"></div>
+                                @endforeach
                             </div>
                         </div>
-                    @endforeach
-                    <div class="wel_see_more"><a href="{{ url('/food') }}">Տեսնել ավելին <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        </a></div>
-                </div>
-                </div>
-            </div>
-        </section>
-        <section class="populars welcome-drink">
-            <div class="category">
-                <div class="container-fluid">
-                    <div class="row">
-                        <h1 class="header_name">
-                            <a href="{{ url('/cocktail') }}">Խմիչք</a>
-                        </h1>
-                        @foreach($most_cocktails as $c)
-                            <div class="col s4">
-                                <div class="most-populars">
-                                    <img src="/img/all/{{$c->nav_alias}}/{{$c->cat_alias}}/{{$c->avatar}}" alt=""/>
-                                    <div class="text">
-                                        <a href="{{ url('/'.$c->nav_alias.'/'.$c->cat_alias."/".$c->alias) }}">
-                                            {{$c->name}}
-                                        </a>
+                    </div>
+                </section>
+            @else
+                <section class="populars welcome-product">
+                    <div class="category">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <h1 class="header_name">
+                                    <a href="{{ url('/' . $populars['nav_alias']) }}"> {{$populars['nav_name']}}</a>
+                                </h1>
+                                @foreach($populars['products'] as $p)
+                                    <div class="col s4">
+                                        <div class="most-populars">
+                                            <img src="/img/products/{{$p->nav_alias}}/{{$p->cat_alias}}/{{$p->avatar}}" alt=""/>
+                                            <div class="text">
+                                                <a href="{{ url('/'.$p->nav_alias.'/'.$p->cat_alias."/".$p->alias) }}">
+                                                    {{$p->name}}
+                                                </a>
+                                            </div>
+                                            <div class="animation_msp_1"></div>
+                                            <div class="animation_msp_2"></div>
+                                        </div>
                                     </div>
-                                    <div class="animation_msp_1"></div>
-                                    <div class="animation_msp_2"></div>
+                                @endforeach
+                                <div class="wel_see_more">
+                                    <a href="{{ url('/' . $populars['nav_alias']) }}">Տեսնել ավելին <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
-                        @endforeach
-                         <div class="wel_see_more"><a href="{{ url('/cocktail') }}">Տեսնել ավելին <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                             </a></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
+            @endif
+        @endforeach
     </section>
 @endsection
 
