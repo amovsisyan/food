@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mslide;
+use App\Carousel;
 use App\Navbar;
 use App\Product;
 use Illuminate\Http\Request;
@@ -18,7 +18,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $slides = Mslide::all();
+        $carousels = Carousel::all();
+
         $navbar_fields = [];
 
         foreach ($this->navbars as $navbar) {
@@ -49,7 +50,7 @@ class HomeController extends Controller
         }
         $response = [
             'navbars'       => $this->navbars,
-            'slides'        => $slides,
+            'carousels'        => $carousels,
             'mostpop_s'     => $data,
         ];
         return response()

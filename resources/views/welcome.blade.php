@@ -2,20 +2,8 @@
 
 @section('content')
     <section class="carousel-menu">
-        <div class="carousel carousel-slider center my_carousel-slider" data-indicators="true">
-            <div class="carousel-fixed-item center">
-                <a class="btn waves-effect white grey-text darken-text-2 carousel-button">See More</a>
-            </div>
-            @foreach($slides as $slide)
-                <div class="carousel-item white-text" href="">
-                    <img src="/img/carousel/{{$slide->avatar}}" alt="...">
-                    <div class="my_carousel-inner-text">
-                        <h2 data-href="{{url( $slide->more_inf)}}" >{{ $slide->header_inf }}</h2>
-                        <p>{{ $slide->body_inf }}</p>
-                    </div>
-                 </div>
-            @endforeach
-        </div>
+        @include('templates.carousel')
+
     </section>
 	<section class="main-slogan">
 		<div class="container-fluid">
