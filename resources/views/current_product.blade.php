@@ -17,7 +17,11 @@
                                         {{$obj->name}}
                                     </h2>
                                     <div class="cur_time_recept">
-                                        <p>Receipt by: {{$obj->recept_by}}</p>
+                                        <p class="receipt_by">Receipt by:
+                                            <a href="{{ url('/hashtag/?hashtag=' . $obj->recept_by) }}">
+                                                #{{$obj->recept_by}}
+                                            </a>
+                                        </p>
                                         <p>Cook time: {{$obj->cook_time}}</p>
                                         <div class="cur_ingredients">
                                             <div class="cur_ingredients_items">Igredients:

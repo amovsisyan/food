@@ -34,8 +34,31 @@ class CategoriesController extends HomeController
             ->where('alias', $type)->first();
         $type_id = $type_obj->id;
         $left_nav = parent::leftnavbar_prod_cur($type);
-        $data = Product::select('name', 'alias', 'avatar', 'cook_time', 'recept_by', 'all_text')
+        $products = Product::select('id', 'name', 'alias', 'avatar', 'cook_time', 'recept_by', 'all_text')
             ->where('categ_id', $type_id)->get();
+
+        $data = [];
+        foreach ($products as $key => $product) {
+            $product_get = $product->hashtags()->get();
+            $data[$key]['products'] = [
+                'id' => $product->id,
+                'name' => $product->name,
+                'alias' => $product->alias,
+                'avatar' => $product->avatar,
+                'cook_time' => $product->cook_time,
+                'recept_by' => $product->recept_by,
+                'all_text' => $product->all_text,
+            ];
+            foreach ($product_get as $val) {
+                $hashtags_descript = $val->hashtag_description()->first();
+//                dd($hashtags_descript);
+                $data[$key]['hashtag'] = [
+                    'name' => $val->hashtag,
+                    'descript' => $hashtags_descript->name
+                ];
+            }
+        }
+//        dd($data);
 
         if(!isset($data)) {
             $result = array(
@@ -44,7 +67,8 @@ class CategoriesController extends HomeController
             return view('current_category', $result);
         } else {
             foreach ($data as $d){
-                $d->all_text = substr($d->all_text, 0, 300);
+//                dd($d['products']['alias']);
+                $d['products']['alias'] = substr($d['products']['alias'], 0, 300);
             }
         }
         $result = array(

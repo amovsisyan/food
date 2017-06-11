@@ -15,4 +15,8 @@ class Product extends Model
     public function carousel(){
         return $this->hasOne('App\Carousel');
     }
+
+    public function hashtags(){
+        return $this->belongsToMany('App\Hashtag', 'product_hashtag', 'product_id', 'hashtag_id');
+    }
 }
