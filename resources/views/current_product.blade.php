@@ -18,7 +18,7 @@
                                     </h2>
                                     <div class="cur_time_recept">
                                         <p class="receipt_by">Receipt by:
-                                            <a href="{{ url('/hashtag/?hashtag=' . $obj->recept_by) }}">
+                                            <a data-receipt="{{$obj['hashtag']['descript']}}" href="{{ url('/hashtag/?hashtag=' . $obj['hashtag']['name']) }}">
                                                 #{{$obj->recept_by}}
                                             </a>
                                         </p>

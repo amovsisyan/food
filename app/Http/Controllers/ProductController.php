@@ -19,11 +19,17 @@ class ProductController extends HomeController
         $type_obj = Category::select('id', 'alias')
             ->where('alias', $type)->first();
 
-        $obj = Product::select('name', 'alias', 'avatar', 'cook_time', 'recept_by', 'all_text', 'ingredients')
+        $obj = Product::select('id', 'name', 'alias', 'avatar', 'cook_time', 'recept_by', 'all_text', 'ingredients')
             ->where('alias', $alias)
             ->where('categ_id', $type_obj->id)
             ->first();
-        $obj->ingredients = explode(';',$obj->ingredients);
+        $obj->ingredients = explode(';', $obj->ingredients);
+        $obj_hashtag = $obj->hashtags()->first();
+        $obj->hashtag = [
+            'name' => $obj_hashtag->hashtag,
+            'descript' => $obj_hashtag->hashtag_description()->first()->name
+        ];
+
         $data = array(
             'navbars'       => $this->navbars,
             'obj'           => $obj,

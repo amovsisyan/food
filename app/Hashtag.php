@@ -9,7 +9,7 @@ class Hashtag extends Model
     protected $table = 'hashtags';
 
     public function products(){
-        return $this->belongsToMany('App\Products', 'product_hashtag');
+        return $this->belongsToMany('App\Product', 'product_hashtag');
     }
 
     public function hashtag_description(){

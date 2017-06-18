@@ -76,7 +76,7 @@ class HomeController extends Controller
         // left JOIN navbars on navbars.id = categories.main_category_id
     }
 
-    public function leftnavbar_prod_cur($type)
+    public function leftnavbar_prod_cur($type=null)
     {
         /*
          SELECT categories.id as cat_id, categories.name as cat_name, navbars.name as nav_name,foods.name as food_name

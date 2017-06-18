@@ -23,7 +23,7 @@
                                         </div>
                                         <div class="col m6 s12 time_recept">
                                             <p class="receipt_by">Receipt by:
-                                                <a href="{{ url('/hashtag/?hashtag=' . $d['hashtag']['name']) }}">
+                                                <a data-receipt="{{$d['hashtag']['descript']}}" href="{{ url('/hashtag/?hashtag=' . $d['hashtag']['name']) }}">
                                                     #{{$d['products']['recept_by']}}
                                                 </a>
                                             </p>

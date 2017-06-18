@@ -51,7 +51,6 @@ class CategoriesController extends HomeController
             ];
             foreach ($product_get as $val) {
                 $hashtags_descript = $val->hashtag_description()->first();
-//                dd($hashtags_descript);
                 $data[$key]['hashtag'] = [
                     'name' => $val->hashtag,
                     'descript' => $hashtags_descript->name
@@ -67,10 +66,10 @@ class CategoriesController extends HomeController
             return view('current_category', $result);
         } else {
             foreach ($data as $d){
-//                dd($d['products']['alias']);
                 $d['products']['alias'] = substr($d['products']['alias'], 0, 300);
             }
         }
+
         $result = array(
             'error'         => false,
             'navbars'       => $this->navbars,
@@ -78,6 +77,6 @@ class CategoriesController extends HomeController
             'navbar_items'  => $left_nav
         );
         return response()
-            -> view('current_category',$result);
+            -> view('current_category', $result);
     }
  }
